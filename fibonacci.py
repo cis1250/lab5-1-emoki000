@@ -8,11 +8,17 @@
 # TODO: (Read detailed instructions in the Readme file)
 
 def user_input():
-     term=  int(input("how many terms of the fibonacci sequence do you want?"))
-     if term <= 0:
-        print("enter a positive number")
-        term=  int(input("how many terms of the fibonacci sequence do you want?"))
-     return term
+    while True:
+     intut= input("how many terms of the fibonacci sequence do you want?")
+     if intut.isdigit():
+        term= int(intut)
+        if term>0:
+            return term
+            break
+        else:
+         print("enter a positive integer")
+     else:
+        print("enter a valid integers")
 
 def fibonacci(term):
     list =[]
@@ -24,10 +30,8 @@ def fibonacci(term):
     return list
 
 def main():
-    while True:
-     term=user_input()
-     break
-    result = fibonacci(term)
+    term=user_input()
+    result= fibonacci(term)
     print(result)
 
 
